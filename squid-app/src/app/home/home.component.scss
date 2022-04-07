@@ -1,0 +1,21 @@
+.icons {
+  padding-right: 5px;
+
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+}
+
+.main {
+  padding: 0 7.5%;
+  flex-wrap: wrap;
+}
+
+.image {
+  padding: 7.5px;
+}
+img {
+  width: 150px;
+  height: 150px;
+}

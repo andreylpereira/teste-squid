@@ -1,3 +1,17 @@
 <app-header></app-header>
-<br>
-<p>home works!</p>
+<br />
+<div class="container main display-flex justify-content-center">
+  <div class="thumbnail-list" *ngFor="let image of feed$ | async">
+    <div class="image" (click)="redirectToImage(image.link)">
+      <img alt="thumbnail" src="{{ image?.imagens.thumbnail.url }}" srcset="" />
+      <p>@{{ image?.usuario.username }}</p>
+      <p><i class="fa-solid fa-heart icons"></i>{{ image?.upvotes }}</p>
+      <p><i class="fa-solid fa-comment icons"></i>{{ image?.comentarios }}</p>
+      <p>
+        <i class="fa-solid fa-calendar-days icons"></i
+        >{{ image?.criadoEm | date: "dd/MM/yyyy HH:mm" }}
+      </p>
+    </div>
+  </div>
+</div>
+<br />

@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FeedService } from 'src/app/services/feed.service';
+import { Router } from '@angular/router';
+import IFeed from '../model/feed.model';
+import { Observable } from 'rxjs/internal/Observable';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  public feed$!: Observable<IFeed[]>;
+  constructor(private feedService: FeedService, private router: Router) {}
 
   ngOnInit(): void {
+    this.getFeed();
   }
 
+  getFeed() {
+    this.feed$ = this.feedService.getFeed();
+  }
+
+  redirectToImage(url: string) {
+    this.router.serializeUrl(this.router.createUrlTree([url]));
+    window.open(url, '_blank');
+  }
 }
