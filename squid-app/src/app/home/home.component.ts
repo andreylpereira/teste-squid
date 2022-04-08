@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     //Timeout apenas para apresentação de loader
     setTimeout(() => {
       this.feed$ = this.feedService.getFeed();
-    }, 2000);
+    }, 1000);
   }
 
   redirectToImage(url: string) {
