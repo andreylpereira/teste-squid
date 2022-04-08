@@ -1,6 +1,5 @@
 .icons {
   padding-right: 5px;
-
   &:hover {
     opacity: 1;
     color: white;
@@ -10,10 +9,6 @@
 .main {
   width: 70%;
   flex-wrap: wrap;
-}
-
-.image {
-  padding: 7.5px;
 }
 
 img {
@@ -27,13 +22,8 @@ img {
   width: 100%;
 }
 
-.container .title {
-  color: #1a1a1a;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
 .content {
+  color: #e94589;
   cursor: pointer;
   position: relative;
   width: 90%;
@@ -107,4 +97,8 @@ img {
 
 .fadeIn-right {
   left: 80%;
+}
+
+.not-available {
+  border: 50px  solid rgb(200, 200, 200);
 }

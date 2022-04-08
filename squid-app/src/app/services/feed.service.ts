@@ -8,6 +8,7 @@ import IFeed from 'src/app/model/feed.model';
 })
 export class FeedService {
   readonly url: string;
+
   constructor(private http: HttpClient) {
     this.url =
       'https://us-central1-squid-apis.cloudfunctions.net/test-front-basic';

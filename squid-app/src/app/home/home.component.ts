@@ -18,15 +18,19 @@ export class HomeComponent implements OnInit {
   }
 
   getFeed() {
-
+    //Timeout apenas para apresentação de loader
     setTimeout(() => {
       this.feed$ = this.feedService.getFeed();
     }, 2000);
-
   }
 
   redirectToImage(url: string) {
-    this.router.serializeUrl(this.router.createUrlTree([url]));
-    window.open(url, '_blank');
+    if (url !== '' && url !== undefined && url !== null) {
+      this.router.serializeUrl(this.router.createUrlTree([url]));
+      window.open(url, '_blank');
+      return true;
+    } else {
+      return false;
+    }
   }
 }
