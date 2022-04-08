@@ -1,3 +1,48 @@
 <app-header></app-header>
-<br>
-<p>home works!</p>
+<br />
+<section
+  *ngIf="!feed$"
+  class="display-flex align-items-center"
+  style="height: 100%"
+>
+  <div class="loader bigger container" role="status">
+    <div class="visually-hidden"></div>
+  </div>
+</section>
+<section
+  class="main container display-flex justify-content-center"
+  *ngIf="feed$"
+>
+  <div *ngFor="let image of feed$ | async">
+    <div class="container-image">
+      <div class="content" (click)="redirectToImage(image.link)">
+        <a>
+          <div class="content-overlay"></div>
+          <figure>
+            <img
+              class="content-image img-fluid"
+              alt="thumbnail"
+              src="{{
+                image?.imagens.thumbnail.url
+                  ? image?.imagens.thumbnail.url
+                  : 'assets/images/notavailable.png'
+              }}"
+            />
+          </figure>
+          <article class="content-details fadeIn-right" *ngIf="feed$">
+            <p>@{{ image?.usuario.username }}</p>
+            <p><i class="fa-solid fa-heart icons"></i>{{ image?.upvotes }}</p>
+            <p>
+              <i class="fa-solid fa-comment icons"></i>{{ image?.comentarios }}
+            </p>
+            <p>
+              <i class="fa-solid fa-calendar-days icons"></i
+              >{{ image?.criadoEm | date: "dd/MM/yyyy HH:mm" }}
+            </p>
+          </article>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
