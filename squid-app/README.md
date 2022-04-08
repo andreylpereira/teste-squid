@@ -2,6 +2,10 @@
 
 Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
+## Acessar pasta do projeto
+
+Após clonar repositório, entre na pasta do projeto com o comando `cd teste-squid/squid-app` em seu terminal.
+
 ## Instale as dependências
 
 Rode `npm install --save` em seu terminal para instalar todas as dependências.
