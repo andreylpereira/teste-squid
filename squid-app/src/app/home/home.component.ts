@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class HomeComponent implements OnInit {
   public feed$!: Observable<IFeed[]>;
+
   constructor(private feedService: FeedService, private router: Router) {}
 
   ngOnInit(): void {
@@ -17,7 +18,11 @@ export class HomeComponent implements OnInit {
   }
 
   getFeed() {
-    this.feed$ = this.feedService.getFeed();
+
+    setTimeout(() => {
+      this.feed$ = this.feedService.getFeed();
+    }, 2000);
+
   }
 
   redirectToImage(url: string) {
