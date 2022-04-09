@@ -3,7 +3,7 @@ import { FeedService } from 'src/app/services/feed.service';
 import { Router } from '@angular/router';
 import IFeed from '../model/feed.model';
 import { Observable } from 'rxjs/internal/Observable';
-import { map } from 'rxjs';
+import { catchError, map } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
