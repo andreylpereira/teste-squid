@@ -14,4 +14,5 @@ Rode `npm install --save` em seu terminal para instalar todas as dependências.
 
 Rode `ng serve` em seu terminal para inicializar servidor. Em seu browser acesse: `http://localhost:4200/`.
 
-## Imagem Home![Captura de tela 2022-04-08 005031](https://user-images.githubusercontent.com/62312260/162360484-5446a6c6-ecef-45c2-94a7-de6b9ff9389c.jpg)
+## Imagem Home
+![Captura de tela 2022-04-08 005031](https://user-images.githubusercontent.com/62312260/162579683-be68a064-8e66-40e7-98e5-50d42c6b20f6.jpg)
