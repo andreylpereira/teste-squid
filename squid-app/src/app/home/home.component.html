@@ -9,9 +9,15 @@
     <div class="visually-hidden"></div>
   </div>
 </section>
+<p
+  class="text-medium msg-error display-flex align-items-center justify-content-center"
+  *ngIf="!(feed$ | async)?.length"
+>
+  Não foi possível carregar o feed.
+</p>
 <section
   class="main container display-flex justify-content-center"
-  *ngIf="feed$"
+  *ngIf="(feed$ | async)?.length"
 >
   <div *ngFor="let image of feed$ | async">
     <div class="container-image">
